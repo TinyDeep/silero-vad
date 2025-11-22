@@ -38,21 +38,21 @@ def build_audiomentations_augs(p):
     from audiomentations import SomeOf, AirAbsorption, BandPassFilter, BandStopFilter, ClippingDistortion, HighPassFilter, HighShelfFilter, \
                                 LowPassFilter, LowShelfFilter, Mp3Compression, PeakingFilter, PitchShift, RoomSimulator, SevenBandParametricEQ, \
                                 Aliasing, AddGaussianNoise
-    transforms = [Aliasing(p=1),
-                  AddGaussianNoise(p=1),
-                  AirAbsorption(p=1),
-                  BandPassFilter(p=1),
-                  BandStopFilter(p=1),
-                  ClippingDistortion(p=1),
-                  HighPassFilter(p=1),
-                  HighShelfFilter(p=1),
-                  LowPassFilter(p=1),
-                  LowShelfFilter(p=1),
-                  Mp3Compression(p=1),
-                  PeakingFilter(p=1),
-                  PitchShift(p=1),
-                  RoomSimulator(p=1, leave_length_unchanged=True),
-                  SevenBandParametricEQ(p=1)]
+    # transforms = [Aliasing(p=1),
+    #               AddGaussianNoise(p=1),
+    #               AirAbsorption(p=1),
+    #               BandPassFilter(p=1),
+    #               BandStopFilter(p=1),
+    #               ClippingDistortion(p=1),
+    #               HighPassFilter(p=1),
+    #               HighShelfFilter(p=1),
+    #               LowPassFilter(p=1),
+    #               LowShelfFilter(p=1),
+    #               Mp3Compression(p=1),
+    #               PeakingFilter(p=1),
+    #               PitchShift(p=1),
+    #               RoomSimulator(p=1, leave_length_unchanged=True),
+    #               SevenBandParametricEQ(p=1)]
     tr = SomeOf((1, 3), transforms=transforms, p=p)
     return tr
 
